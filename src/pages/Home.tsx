@@ -14,14 +14,14 @@ const Home = () => {
     <>
       <div className="flex w-full h-full">
         <div className="hero bg-base-current min-h-max">
-          <div className="hero-content flex-col lg:flex-row">
-            <img src={Profile} className="max-w-sm" />
-            <div className="flex flex-col">
+          <div className="hero-content w-screen flex-col lg:flex-row">
+            <img src={Profile} className="max-w-[18rem] sm:max-w-sm" />
+            <div className="flex flex-col w-full mx-5 text-wrap">
               <h1 className="text-5xl font-bold">Hello :)</h1>
-              <pre className="py-7">
+              <pre className="py-7 text-wrap">
                 Hi I'm James. I was born on the 9th of August, 1999.
               </pre>
-              <code className="pt-1">
+              <code className="pt-1 text-xs sm:text-medium">
                 I'm graduated Information Technology major from King Mongkut's
                 Institute of Technology Ladkrabang. I'm Web Developer, I prefer
                 to design and develop the website or mobile-app almost frontend.

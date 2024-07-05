@@ -85,7 +85,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
           />
         </Header>
         <Content
-          style={{ padding: "20px 48px", height: "100vh", maxHeight: '100vh', overflowY: 'auto'}}
+          style={{maxWidth: "100vw", height: "100vh", maxHeight: '100vh', overflowY: 'auto'}}
         >
           {children}
         </Content>        
