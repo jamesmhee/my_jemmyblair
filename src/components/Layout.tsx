@@ -23,13 +23,17 @@ const labelMenu = [
   {
     name: 'My Project',
     path: '/myproject'
+  },
+  {
+    name: 'MY Blog',
+    path: 'https://blog.jemmyblair.xyz/'
   }
 ]
 
 const items = new Array(labelMenu.length).fill(null).map((_, index) => ({
   key: String(index + 1),
   label: (
-    <Link to={`${labelMenu[index]?.path}`}>
+    <Link to={`${labelMenu[index]?.path}`} target={labelMenu[index]?.name === 'MY Blog' ? '_blank' : '_self'}>
       {labelMenu[index]?.name}
     </Link>
   ),
