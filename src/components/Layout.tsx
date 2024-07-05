@@ -1,7 +1,7 @@
 import { ConfigProvider, Layout, Menu, theme } from "antd";
-import { useContext } from "react";
+import { useContext, useEffect, useState, useMemo } from "react";
 import { ThemeContext } from "../utils/context/ThemeStore";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { RiBearSmileLine } from "react-icons/ri";
 import SwitchTheme from "./SwitchTheme";
 
@@ -18,11 +18,11 @@ const labelMenu = [
   },
   {
     name: 'About me',
-    path: 'aboutme'
+    path: '/aboutme'
   },
   {
     name: 'My Project',
-    path: 'myproject'
+    path: '/myproject'
   }
 ]
 
@@ -36,7 +36,19 @@ const items = new Array(labelMenu.length - 1).fill(null).map((_, index) => ({
 }));
 
 const LayoutTheme = ({ children }: ILayoutProps) => {
-  const { isDark, setIsDark } = useContext(ThemeContext);
+  const localtion = useLocation()
+  const { isDark, setIsDark } = useContext(ThemeContext); 
+  const pathName = localtion.pathname
+  const [ menu, setMenu ] = useState<string[] | undefined>([pathName])
+  
+  useEffect(()=>{
+    const findmenuPath = labelMenu.findIndex((elm)=>{
+      return elm.path === pathName
+    })    
+    if(findmenuPath !== -1){      
+      setMenu([String(findmenuPath+1)])
+    }    
+  }, [pathName])
 
   const handleTheme = ():void =>{
     if(isDark === 'dark'){
@@ -48,18 +60,45 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
     }
   }
 
+  const findIsDark = (type:string) =>{    
+    if(type === 'menu'){
+      if(isDark === 'dark'){
+        return 'rgb(150, 215, 255)'
+      }else{
+        return '#000'
+      }
+    }
+  }
+
   return (
     <ConfigProvider
       theme={{
-        algorithm: isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
-                
+        token: {
+          // Seed Token
+          colorPrimary: findIsDark('menu'),          
+        },
+        algorithm: isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,                
+        components: {
+          Layout: {            
+            headerBg: isDark === "dark" ? 'black' : 'white',            
+          },
+          Menu: {            
+            colorBgContainer: isDark === 'dark' ? 'transparent' : 'transparent',
+            itemSelectedBg: isDark === 'dark' ? 'white' : 'black',
+            darkItemBg: 'black',
+            itemColor:  isDark === 'dark' ? 'white' : 'black',                        
+            itemSelectedColor:  isDark === 'dark' ? 'white' : 'rgb(150, 215, 255)',
+            itemHoverColor:  isDark === 'dark' ? 'white' : 'rgb(150, 215, 255)',
+            horizontalItemSelectedColor: isDark === 'dark' ? 'white' : 'rgb(150, 215, 255)'
+          }
+        }
       }}
     >
       <Layout style={{ maxHeight: "100vh", maxWidth: "100vw", position: 'relative' }}>
         <div className={(isDark === "dark" ? 'bg-zinc-200' : 'bg-amber-300 ') + ' absolute bottom-0 right-1 z-50 px-2 pt-2 rounded-t-xl'}>
           <SwitchTheme onClick={handleTheme} isDark={isDark}/>
-        </div>
-        <Header            
+        </div>        
+        <Header                 
           style={{
             background: isDark === 'dark' ? '' : 'white',
             position: "sticky",
@@ -68,6 +107,8 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
             width: "100vw",
             display: "flex",
             alignItems: "center",
+            paddingBottom: 2,
+            borderBottom: isDark === 'dark' ? '1px solid white': ''
           }}
         >
           <Link to="/">
@@ -76,16 +117,16 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
               <span className="text-2xl my-auto">jemmy</span>
             </h1>
           </Link>
-          <Menu
+          <Menu          
             theme={isDark === 'dark' ? "dark" : "light"}
-            mode="horizontal"
-            defaultSelectedKeys={["1"]}
+            mode="horizontal"            
+            selectedKeys={menu}
             items={items}            
-            style={{ flex: 1, minWidth: 0, justifyContent: 'flex-end' }}
+            style={{ flex: 1, minWidth: 0, justifyContent: 'flex-end', border: 'none'}}
           />
         </Header>
         <Content
-          style={{maxWidth: "100vw", height: "100vh", maxHeight: '100vh', overflowY: 'auto'}}
+          style={{maxWidth: "100vw", height: "100vh", maxHeight: '100vh', overflowY: 'auto', overflowX: 'hidden'}}
         >
           {children}
         </Content>        

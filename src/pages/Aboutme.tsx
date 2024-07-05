@@ -3,7 +3,7 @@ import { Divider, Timeline, ConfigProvider } from "antd"
 export const UnitDetails = () =>{
   return (
     <>
-      <ul className="list-disc list-outside leading-relaxed text-xs break-words my-5 text-pretty w-auto">
+      <ul className="list-disc list-outside leading-relaxed text-xs break-words my-5 text-pretty w-full">
         <li>
           Participate in the development of the back office system for financial companies by transitioning task management from paperwork to an online system.
         </li>
@@ -38,7 +38,8 @@ const Aboutme = () => {
             }
           }
         }}>
-          <Timeline             
+          <Timeline
+          style={{maxWidth: "100vw", margin: '0px 20px'}}
             mode={'alternate'}
             items={[
               {
