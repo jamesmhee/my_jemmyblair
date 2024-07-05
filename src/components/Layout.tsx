@@ -79,10 +79,11 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
         },
         algorithm: isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,                
         components: {
-          Layout: {            
+          Layout: {                        
+            headerPadding: '0px 0px 2px 20px',            
             headerBg: isDark === "dark" ? 'black' : 'white',            
           },
-          Menu: {            
+          Menu: {                
             colorBgContainer: isDark === 'dark' ? 'transparent' : 'transparent',
             itemSelectedBg: isDark === 'dark' ? 'white' : 'black',
             darkItemBg: 'black',
@@ -98,7 +99,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
         <div className={(isDark === "dark" ? 'bg-zinc-200' : 'bg-amber-300 ') + ' absolute bottom-0 right-1 z-50 px-2 pt-2 rounded-t-xl'}>
           <SwitchTheme onClick={handleTheme} isDark={isDark}/>
         </div>        
-        <Header                 
+        <Header                         
           style={{
             background: isDark === 'dark' ? '' : 'white',
             position: "sticky",
@@ -106,8 +107,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
             zIndex: 1,
             width: "100vw",
             display: "flex",
-            alignItems: "center",
-            paddingBottom: 2,
+            alignItems: "center",            
             borderBottom: isDark === 'dark' ? '1px solid white': ''
           }}
         >
@@ -117,7 +117,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
               <span className="text-2xl my-auto">jemmy</span>
             </h1>
           </Link>
-          <Menu          
+          <Menu                    
             theme={isDark === 'dark' ? "dark" : "light"}
             mode="horizontal"            
             selectedKeys={menu}
