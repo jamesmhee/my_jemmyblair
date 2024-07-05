@@ -26,7 +26,7 @@ const labelMenu = [
   }
 ]
 
-const items = new Array(1).fill(null).map((_, index) => ({
+const items = new Array(labelMenu.length - 1).fill(null).map((_, index) => ({
   key: String(index + 1),
   label: (
     <Link to={`${labelMenu[index]?.path}`}>
