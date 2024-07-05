@@ -51,8 +51,8 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
   return (
     <ConfigProvider
       theme={{
-        algorithm:
-          isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        algorithm: isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
+                
       }}
     >
       <Layout style={{ maxHeight: "100vh", maxWidth: "100vw", position: 'relative' }}>
@@ -70,10 +70,12 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
             alignItems: "center",
           }}
         >
-          <h1 className="text-3xl sm:text-5xl flex items-center gap-2">
-            <RiBearSmileLine className="inline-flex my-auto"/>
-            <span className="text-2xl my-auto">jemmy</span>
-          </h1>
+          <Link to="/">
+            <h1 className="text-3xl sm:text-5xl flex items-center gap-2">
+              <RiBearSmileLine className="inline-flex my-auto"/>
+              <span className="text-2xl my-auto">jemmy</span>
+            </h1>
+          </Link>
           <Menu
             theme={isDark === 'dark' ? "dark" : "light"}
             mode="horizontal"

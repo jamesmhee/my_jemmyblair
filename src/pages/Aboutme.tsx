@@ -42,16 +42,16 @@ const Aboutme = () => {
             mode={'alternate'}
             items={[
               {
-                children: 'KING MONGKUT INSTITUTE OF TECHNOLOGYLADKRABANG - Bachelor of Science (Information Technology)',              
+                children: <b>KING MONGKUT INSTITUTE OF TECHNOLOGYLADKRABANG - Bachelor of Science (Information Technology)</b>,              
                 color: 'green',
                 position: 'left',
-                label: 'July 2019 - May 2023'
+                label: <u>July 2019 - May 2023</u>
               },
               {
-                children: <>Unit Co., Ltd. - Junior Developer <br/> <UnitDetails/></>,  
+                children: <><b>Unit Co., Ltd. - Junior Developer</b> <br/> <UnitDetails/></>,  
                 color: 'orange',
                 position: 'right',
-                label: 'September 2023 - July 2024'
+                label: <u>September 2023 - July 2024</u>
               }              
             ]}
           />
