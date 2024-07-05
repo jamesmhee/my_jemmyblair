@@ -26,7 +26,7 @@ const Aboutme = () => {
     <>
       <Divider orientation="left">
         <span className="text-xl text-medium">
-          About me
+          ABOUT ME
         </span>
       </Divider>
       <div className="flex items-center justify-center my-7 w-full">

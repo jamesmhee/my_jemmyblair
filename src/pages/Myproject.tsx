@@ -1,10 +1,18 @@
-import React from 'react'
+import { ConfigProvider, Divider } from "antd"
 
 type Props = {}
 
 const Myproject = (props: Props) => {
   return (
-    <div>Myproject</div>
+    <ConfigProvider theme={{
+      
+    }}>
+      <Divider orientation="left">
+        <span className="text-xl text-medium">
+          MY PROJECT
+        </span>
+      </Divider>
+    </ConfigProvider>
   )
 }
 

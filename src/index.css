@@ -7,3 +7,41 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.text-dot {
+  animation: dotmove 0.5s infinite;
+  -webkit-animation: dotmove 0.5s infinite;
+  -moz-animation: dotmove 0.5s infinite;
+  -o-animation: dotmove 0.5s infinite;
+  -ms-animation: dotmove 0.5s infinite;
+}
+
+@keyframes dotmove {
+  0% { opacity: 0; }
+  50% { opcaity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes dotmove {
+  0% { opacity: 0; }
+  50% { opcaity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes dotmove {
+  0% { opacity: 0; }
+  50% { opcaity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes dotmove {
+  0% { opacity: 0; }
+  50% { opcaity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes dotmove {
+  0% { opacity: 0; }
+  50% { opcaity: 0.5; }
+  100% { opacity: 1; }
+}

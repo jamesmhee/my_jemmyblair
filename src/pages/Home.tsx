@@ -1,23 +1,50 @@
+import {createElement, useEffect, useRef, useState} from 'react'
 import Profile from "../assets/imgs/arprofile-1b50e0eb.png";
 import ModalBox from "../components/ModalBox";
 import CV from "../components/CV";
 import ResumeCV from "../assets/pdf/Nontasab Siangchin CV.pdf"
 
 const Home = () => {
-  // const
+  const logoRef = useRef<any>(null)
+  const [dot, setDot] = useState<boolean>(false)
+
   const downloadCV = () => {
     const btn:HTMLElement | null = document.querySelector("#downloadCV")
     btn?.click()
   };
+
+  const tabTyping = () =>{
+    const text = '|'
+    return text
+  }
+
+  let i = 0
+  const textTyping = () =>{
+    const text = 'Nontasab Siangchin :)'    
+    const textTimeout = setTimeout(textTyping, 100)   
+    if(i < text.length){
+      logoRef.current.innerHTML += text.charAt(i++)
+    }else{
+      setDot(true)
+      clearTimeout(textTimeout)
+    }     
+  }
+
+  useEffect(()=>{
+    textTyping()
+  }, [])
 
   return (
     <>
       <div className="flex w-full h-full">
         <div className="hero bg-base-current min-h-max">
           <div className="hero-content w-screen flex-col lg:flex-row">
-            <img src={Profile} className="max-w-[18rem] sm:max-w-sm" />
+            <img src={Profile} className="max-w-[18rem] sm:max-w-[20rem] lg:max-w-sm" />
             <div className="flex flex-col w-full mx-5 text-wrap">
-              <h1 className="text-5xl font-bold">Hello :)</h1>
+              <div className='flex items-center max-w-max max-h-max flex-nowrap text-nowrap py-2'>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold" ref={logoRef}></h1>              
+                {dot ? (<div className='text-dot text-2xl sm:text-5xl'>.</div>) : ''}                
+              </div>
               <pre className="py-7 text-wrap">
                 Hi I'm James. I was born on the 9th of August, 1999.
               </pre>

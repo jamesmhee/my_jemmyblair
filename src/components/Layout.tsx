@@ -26,7 +26,7 @@ const labelMenu = [
   }
 ]
 
-const items = new Array(labelMenu.length - 1).fill(null).map((_, index) => ({
+const items = new Array(labelMenu.length).fill(null).map((_, index) => ({
   key: String(index + 1),
   label: (
     <Link to={`${labelMenu[index]?.path}`}>
@@ -69,15 +69,13 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
       }
     }
   }
-
   return (
     <ConfigProvider
       theme={{
-        token: {
-          // Seed Token
+        algorithm: isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,                
+        token: {          
           colorPrimary: findIsDark('menu'),          
         },
-        algorithm: isDark === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,                
         components: {
           Layout: {                        
             headerPadding: '0px 0px 2px 20px',            
