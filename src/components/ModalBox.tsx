@@ -95,8 +95,9 @@ const ModalBox = ({
         >
           {buttonText}
         </Button>
-        <Modal
-          styles={{ body: { height: height }}}        
+        <Modal        
+          zIndex={20}
+          styles={{ body: { height: height }}}
           footer={hideButton}
           width={width}
           centered={centered}

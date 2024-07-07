@@ -33,7 +33,7 @@ const labelMenu = [
 const items = new Array(labelMenu.length).fill(null).map((_, index) => ({
   key: String(index + 1),
   label: (
-    <Link to={`${labelMenu[index]?.path}`} target={labelMenu[index]?.name === 'MY Blog' ? '_blank' : '_self'}>
+    <Link to={`${labelMenu[index]?.path}`} target={labelMenu[index]?.name === 'MY Blog' ? '_blank' : ''}>
       {labelMenu[index]?.name}
     </Link>
   ),
@@ -52,6 +52,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
     if(findmenuPath !== -1){      
       setMenu([String(findmenuPath+1)])
     }    
+    window.scrollTo(0, 0)
   }, [pathName])
 
   const handleTheme = ():void =>{
@@ -97,12 +98,13 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
         }
       }}
     >
-      <Layout style={{ maxHeight: "100vh", maxWidth: "100vw", position: 'relative' }}>
-        <div className={(isDark === "dark" ? 'bg-zinc-200' : 'bg-amber-300 ') + ' absolute bottom-0 right-1 z-50 px-2 pt-2 rounded-t-xl'}>
+      <Layout style={{ maxWidth: "100vw" }} className="flex flex-col">
+        <div className={(isDark === "dark" ? 'bg-zinc-200' : 'bg-amber-300 ') + ' fixed bottom-0 right-1 z-50 px-2 pt-2 rounded-t-xl'}>
           <SwitchTheme onClick={handleTheme} isDark={isDark}/>
         </div>        
         <Header                         
           style={{
+            flex: '1 0 auto',
             background: isDark === 'dark' ? '' : 'white',
             position: "sticky",
             top: 0,
@@ -128,7 +130,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
           />
         </Header>
         <Content
-          style={{maxWidth: "100vw", height: "100vh", maxHeight: '100vh', overflowY: 'auto', overflowX: 'hidden'}}
+          style={{ flex: '1 0 auto', maxWidth: "100vw", height: "100%", minHeight: '100vh', overflowY: 'auto', overflowX: 'hidden'}}
         >
           {children}
         </Content>        

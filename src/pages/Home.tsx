@@ -3,8 +3,10 @@ import Profile from "../assets/imgs/arprofile-1b50e0eb.png";
 import ModalBox from "../components/ModalBox";
 import CV from "../components/CV";
 import ResumeCV from "../assets/pdf/Nontasab Siangchin CV.pdf"
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
+  const location = useLocation()
   const logoRef = useRef<any>(null)
   const [dot, setDot] = useState<boolean>(false)
 
@@ -13,21 +15,21 @@ const Home = () => {
     btn?.click()
   };
 
-  const tabTyping = () =>{
-    const text = '|'
-    return text
-  }
 
   let i = 0
   const textTyping = () =>{
     const text = 'Nontasab Siangchin :)'    
-    const textTimeout = setTimeout(textTyping, 100)   
-    if(i < text.length){
-      logoRef.current.innerHTML += text.charAt(i++)
-    }else{
-      setDot(true)
+    const textTimeout = setTimeout(textTyping, 100)    
+    try{
+      if(i < text.length){
+        logoRef.current.innerHTML += text.charAt(i++)
+      }else{
+        setDot(true)
+        clearTimeout(textTimeout)
+      }
+    }catch(error){
       clearTimeout(textTimeout)
-    }     
+    }
   }
 
   useEffect(()=>{
@@ -38,7 +40,7 @@ const Home = () => {
     <>
       <div className="flex w-full h-full">
         <div className="hero bg-base-current min-h-max">
-          <div className="hero-content w-screen flex-col lg:flex-row">
+          <div className="hero-content w-screen flex-col lg:flex-row items-center justify-center h-screen">
             <img src={Profile} className="max-w-[18rem] sm:max-w-[20rem] lg:max-w-sm" />
             <div className="flex flex-col w-full mx-5 text-wrap">
               <div className='flex items-center max-w-max max-h-max flex-nowrap text-nowrap py-2'>
