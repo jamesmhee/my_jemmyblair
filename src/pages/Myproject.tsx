@@ -25,7 +25,7 @@ const Myproject = () => {
         </span>
       </Divider>
       <div className="flex items-center w-full px-5">
-        <div className={(isDark === 'dark' ? 'bg-zinc-900 text-gray-50' : 'bg-white text-zinc-900') + ' flex flex-col sm:flex-row border rounded-2xl'}>
+        <div className={(isDark === 'dark' ? 'bg-zinc-900 text-gray-50' : 'bg-white text-zinc-900') + ' flex flex-col sm:flex-row border rounded-2xl w-full'}>
           <PreviewProject images={images} cover={PokexImg}/>
           <div className="w-full max-w-92 flex justify-between flex-col">
             <div className="w-max">
