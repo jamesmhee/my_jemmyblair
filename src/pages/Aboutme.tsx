@@ -1,4 +1,5 @@
 import { Divider, Timeline, ConfigProvider } from "antd"
+import AboutmeDetails from "../components/AboutmeDetails"
 
 export const UnitDetails = () =>{
   return (
@@ -29,7 +30,7 @@ const Aboutme = () => {
           ABOUT ME
         </span>
       </Divider>
-      <div className="flex items-center justify-center my-7 w-full">
+      <div className="flex items-center flex-col gap-10 justify-center my-7 w-full">
         <ConfigProvider theme={{
           components: {            
             Timeline: {              
@@ -38,6 +39,7 @@ const Aboutme = () => {
             }
           }
         }}>
+          <AboutmeDetails/>
           <Timeline
           style={{maxWidth: "100vw", margin: '0px 20px'}}
             mode={'alternate'}

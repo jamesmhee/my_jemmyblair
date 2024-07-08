@@ -57,7 +57,7 @@ const Home = () => {
                 I am extremely motivated to constantly develop my skills and
                 grow professionally.
               </code>
-              <div className="lg:ml-auto mt-10 lg:mt-20">
+              <div className="lg:ml-auto mt-10 lg:mt-20">                
                 <a id="downloadCV" className="hidden" href={ResumeCV} download></a>
                 <ModalBox                  
                   onClick={downloadCV}                  
