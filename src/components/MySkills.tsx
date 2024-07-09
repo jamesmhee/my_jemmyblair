@@ -1,4 +1,4 @@
-import { Divider } from "antd";
+import { Divider, Popover } from "antd";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -9,7 +9,9 @@ import {
   FaGithubAlt,
   FaAssistiveListeningSystems,
   FaFigma,
-  FaBusinessTime
+  FaBusinessTime,
+  FaBitcoin,
+  FaEthereum
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
@@ -24,7 +26,8 @@ import {
   SiPostman,
   SiFuturelearn,
   SiHiveBlockchain,
-  SiFirebase
+  SiFirebase,
+  SiSolidity
 } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa6";
 import { AiOutlineAntDesign } from "react-icons/ai";
@@ -32,6 +35,7 @@ import { RiTeamFill } from "react-icons/ri";
 import { GiThink } from "react-icons/gi";
 import { MdSupport } from "react-icons/md";
 import { TbApi } from "react-icons/tb";
+import { PiNumberCircleThreeFill } from "react-icons/pi";
 
 const MySkills = () => {
   return (
@@ -150,11 +154,7 @@ const MySkills = () => {
             <div className="badge badge-lg bg-gradient-to-r from-orange-600 via-violet-500 to-lime-700 text-white border-none p-5 flex gap-2 text-lg items-center">
               <FaFigma className="text-2xl" />
               Figma
-            </div>
-            <div className="badge badge-lg bg-gradient-to-r from-zinc-500 to-zinc-700 text-white border-none p-5 flex gap-2 text-lg items-center">
-              <SiHiveBlockchain className="text-2xl" />
-              Blockchain
-            </div>
+            </div>            
           </div>
         </div>
         <div className="flex flex-col gap-5 sm:flex-row w-full justify-between">
@@ -189,6 +189,37 @@ const MySkills = () => {
             <div className="badge badge-lg bg-gradient-to-r from-zinc-500 to-zinc-700 text-white border-none p-5 flex gap-2 text-lg items-center">
               <FaBusinessTime className="text-2xl" />
               Manage time
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-5 sm:flex-row w-full justify-between">
+          <b className="w-full max-w-[200px] badge badge-outline p-5 text-lg uppercase sm:ml-6">
+            Interested
+          </b>
+          <div className="w-full flex gap-y-5 items-center justify-center sm:justify-end flex-wrap gap-5">            
+            <div className="badge badge-lg bg-gradient-to-r from-zinc-500 to-zinc-700 text-white border-none p-5 flex gap-2 text-lg items-center">
+              <SiHiveBlockchain className="text-2xl" />
+              Blockchain
+            </div>
+            <div className="badge badge-lg bg-gradient-to-r from-zinc-500 to-zinc-700 text-white border-none p-5 flex gap-2 text-lg items-center">
+              <PiNumberCircleThreeFill className="text-2xl" />
+              Web3 Technology
+            </div>
+            <div className="cursor-pointer badge badge-lg bg-gradient-to-r from-yellow-300 to-orange-600 text-white border-none p-5 flex gap-2 text-lg items-center">
+              <FaBitcoin className="text-2xl" />
+              <Popover content="bc1qrvme08ufnshhf0gv8gcdrhhz7f2peha5xgd2js" title="MY BTC WALLET" className="select-all">
+                Bitcoin (HOVER ME)
+              </Popover>
+            </div>
+            <div className="cursor-pointer badge badge-lg bg-gradient-to-r from-violet-200 to-blue-500 text-white border-none p-5 flex gap-2 text-lg items-center">
+              <FaEthereum className="text-2xl" />
+              <Popover content="0xeab04d748c5453cf9d43195ab77f453a6268ec36" title="MY ETH WALLET">
+                Ethereum (HOVER ME)
+              </Popover>
+            </div>
+            <div className="badge badge-lg bg-gradient-to-r from-zinc-500 to-zinc-700 text-white border-none p-5 flex gap-2 text-lg items-center">
+              <SiSolidity className="text-2xl" />
+              Solidity & Smart Contracts
             </div>
           </div>
         </div>

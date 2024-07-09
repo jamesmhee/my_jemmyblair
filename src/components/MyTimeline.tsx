@@ -21,17 +21,16 @@ const UnitDetails = () =>{
     )
   }
 
-const MyTimeline = () => {
-    
+const MyTimeline = () => {  
   return (
-    <>
+    <div className='w-full px-0 sm:px-2 md:px-5 lg:px-10'>
       <Divider orientation="left">
         <span className="text-xl text-medium">
           MY TIMELINE
         </span>
       </Divider>
       <Timeline
-          style={{maxWidth: "100vw", margin: '0px 20px'}}
+          style={{maxWidth: "100vw", margin: '50px 20px 0px 20px'}}
           mode={'alternate'}
           items={[
               {
@@ -48,7 +47,7 @@ const MyTimeline = () => {
               }              
           ]}
       />
-    </>
+    </div>
   )
 }
 

@@ -73,23 +73,18 @@ const ModalBox = ({
             defaultHoverBorderColor: defaultHoverBorderColor,
             colorPrimary: colorPrimary,
             colorPrimaryHover: colorPrimaryHover,
-            colorPrimaryBgHover: colorPrimaryBgHover,
-            // colorPrimaryText: colorPrimaryText,
-            // colorPrimaryTextHover: colorPrimaryTextHover
-          },
-          Modal: {
-            colorBorder: 'red'
-          }
+            colorPrimaryBgHover: colorPrimaryBgHover,            
+          },          
         }
       }}>
-        <Button
+        <Button          
           style={{
             width: buttonWidth,
             height: buttonHeight,
             color: color,
-            background: buttonColor,
+            background: buttonColor,          
             fontSize: buttonFontSize,
-          }}
+          }}          
           type={type}
           onClick={showModal}
         >

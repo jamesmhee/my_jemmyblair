@@ -64,21 +64,21 @@ const Home = () => {
                   height={'100%'}
                   width={'100%'}
                   colorBorder={'transparent'}
-                  defaultHoverBorderColor={'black'}                  
+                  defaultHoverBorderColor={'transparent'}                  
                   // hideButton
                   // loading                                    
                   type={"default"}
                   centered={true}
-                  color={"black"}
+                  color={"white"}
                   buttonColor={"linear-gradient(90deg, rgba(0,181,209,1) 0%, rgba(36,136,151,1) 37%)"}
                   buttonText={"VIEW MY CV"}
-                  buttonFontSize={"14px"}
+                  buttonFontSize={"16px"}
                   modalTitle={""}
                   modalTextContent={""}
                   okText={'Download MY CV'}
                   okType={'primary'}
-                  colorPrimary={'#96d7ff'}
-                  colorPrimaryHover={'#42b7ff'}                                                      
+                  colorPrimary={'linear-gradient(90deg, rgba(0,181,209,1) 0%, rgba(36,136,151,1) 37%)'}
+                  colorPrimaryHover={'linear-gradient(90deg, rgba(36,136,151,1) 0%, rgba(0,181,209,1) 37%)'}                                                      
                   modalContent={<CV/>}
                 />
               </div>

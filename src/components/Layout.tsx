@@ -91,9 +91,9 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
             itemSelectedBg: isDark === 'dark' ? 'white' : 'black',
             darkItemBg: 'black',
             itemColor:  isDark === 'dark' ? 'white' : 'black',                        
-            itemSelectedColor:  isDark === 'dark' ? 'white' : 'rgb(150, 215, 255)',
-            itemHoverColor:  isDark === 'dark' ? 'white' : 'rgb(150, 215, 255)',
-            horizontalItemSelectedColor: isDark === 'dark' ? 'white' : 'rgb(150, 215, 255)'
+            itemSelectedColor:  isDark === 'dark' ? 'white' : 'rgb(36, 136, 151)',
+            itemHoverColor:  isDark === 'dark' ? 'white' : 'rgb(36, 136, 151)',
+            horizontalItemSelectedColor: isDark === 'dark' ? 'white' : 'rgb(36, 136, 151)'
           }
         }
       }}
