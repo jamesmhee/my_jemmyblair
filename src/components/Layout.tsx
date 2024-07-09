@@ -68,7 +68,7 @@ const LayoutTheme = ({ children }: ILayoutProps) => {
   const findIsDark = (type:string) =>{    
     if(type === 'menu'){
       if(isDark === 'dark'){
-        return 'rgb(150, 215, 255)'
+        return 'rgb(36, 136, 151)'
       }else{
         return '#000'
       }

@@ -3,10 +3,8 @@ import Profile from "../assets/imgs/arprofile-1b50e0eb.png";
 import ModalBox from "../components/ModalBox";
 import CV from "../components/CV";
 import ResumeCV from "../assets/pdf/Nontasab Siangchin CV.pdf"
-import { useLocation } from 'react-router-dom';
 
 const Home = () => {
-  const location = useLocation()
   const logoRef = useRef<any>(null)
   const [dot, setDot] = useState<boolean>(false)
 
@@ -65,14 +63,14 @@ const Home = () => {
                   buttonHeight={"3rem"}
                   height={'100%'}
                   width={'100%'}
-                  colorBorder={'#e3e3e3'}
+                  colorBorder={'transparent'}
                   defaultHoverBorderColor={'black'}                  
                   // hideButton
                   // loading                                    
                   type={"default"}
                   centered={true}
                   color={"black"}
-                  buttonColor={"#96d7ff"}
+                  buttonColor={"linear-gradient(90deg, rgba(0,181,209,1) 0%, rgba(36,136,151,1) 37%)"}
                   buttonText={"VIEW MY CV"}
                   buttonFontSize={"14px"}
                   modalTitle={""}
