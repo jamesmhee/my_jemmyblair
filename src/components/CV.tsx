@@ -1,4 +1,4 @@
-import ResumePDF from '../assets/pdf/resume.png'
+import ResumePDF from '../assets/pdf/resume.jpg'
 
 const CV = () => {
   return (
